@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Category;
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CategoryController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = \App\Models\Category::has('products')->get();
+
+        return $this->showAll($categories);
     }
 
     /**

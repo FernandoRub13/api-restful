@@ -18,9 +18,10 @@ return new class extends Migration
             $table->integer('quantity')->unsigned();
             $table->timestamps();
             $table->softDeletes();
+            $table->unsignedBigInteger('buyer_id');
 
-            $table->foreignId('buyer_id')->constrained();
-            $table->foreignId('product_id')->constrained();
+            $table->foreign('buyer_id')->references('id')->on('users');
+            $table->foreignId('product_id')->index()->constrained();
         });
     }
 
