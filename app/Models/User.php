@@ -15,7 +15,7 @@ class User extends Authenticatable
     const VERIFIED_USER = '1';
     const UNVERIFIED_USER = '0';
 
-    const ADMINISTRATOR = 'true';
+    const ADMINISTRATOR_USER = 'true';
     const REGULAR_USER = 'false';
 
     /**
@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function isAdminisrator()
     {
-        return $this->admin === User::ADMINISTRATOR;
+        return $this->admin === User::ADMINISTRATOR_USER;
     }
 
     public static function generateVerificationToken()
