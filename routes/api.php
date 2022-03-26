@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('/buyers', 'Buyer\BuyerController', ['only' => ['index', 'show']]);
+Route::apiResource('/users', 'User\UserController', ['except' => ['create', 'edit']]);
+Route::apiResource('/categories', 'Category\CategoryController', ['only' => ['index', 'show']]);
+Route::apiResource('/products', 'Product\ProductController', ['only' => ['index', 'show']]);
+Route::apiResource('/sellers', 'Seller\SellerController', ['only' => ['index', 'show']]);
+Route::apiResource('/transactions', 'Transaction\TransactionController', ['except' => ['create', 'edit']]);
+
+
