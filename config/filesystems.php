@@ -44,6 +44,22 @@ return [
             'throw' => false,
         ],
 
+        // 'images' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/public/img'), //Almacenaje de imagenes al storage
+        //     'url' => env('APP_URL').'/storage',
+        //     'visibility' => 'public',
+        //     'throw' => false,
+        // ],
+        
+        'images' => [
+            'driver' => 'local',
+            'root' => public_path('img'),
+            'url' => env('APP_URL').'/storage', //Almacenaje de imagenes a la carpeta public
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

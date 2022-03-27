@@ -14,6 +14,8 @@ class Product extends Model
     const UNAVAILABLE_PRODUCT = 'unavailable';
 
     protected $guarded = ['id'];
+    
+    protected $hidden = ['pivot'];
 
     public function isAvailable()
     {

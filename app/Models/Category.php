@@ -12,6 +12,8 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
+    protected $hidden = ['pivot'];
+
     public function products()
     {
         return $this->belongsToMany(Product::class);
