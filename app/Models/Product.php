@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Transformers\ProductTransformer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -15,7 +16,10 @@ class Product extends Model
 
     protected $guarded = ['id'];
     
-    protected $hidden = ['pivot'];
+    protected $hidden = ['pivot'];   
+    
+    public $transformer = ProductTransformer::class;
+
 
     public function isAvailable()
     {
