@@ -74,4 +74,5 @@ Route::apiResource('transactions', TransactionController::class, ['except' => ['
 Route::apiResource('transactions.categories', TransactionCategoryController::class, ['only' => ['index']]);
 Route::apiResource('transactions.sellers', TransactionSellerController::class, ['only' => ['index']]);
 
-
+Route::get('users/verify/{token}', UserController::class . '@verify')->name('verify');
+Route::get('users/{user}/resend', UserController::class . '@resend')->name('resend');

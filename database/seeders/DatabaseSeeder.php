@@ -20,6 +20,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::flushEventListeners();
+        Category::flushEventListeners();
+        Product::flushEventListeners();
+        Transaction::flushEventListeners();
+        
+
         User::factory(2000)->create();
         Category::factory(30)->create();
         Product::factory(1000)->create();
